@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {Text} from 'react-native';
 
-class Home extends React.Component {
+class BarList extends React.Component {
     render() {
         return (
             <Text>
@@ -11,4 +11,4 @@ class Home extends React.Component {
     }
 }
 
-export default Home
+export default BarList

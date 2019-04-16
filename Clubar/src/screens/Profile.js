@@ -1,7 +1,14 @@
 import React from 'react'
+import {View ,Text} from 'react-native'
 
 export default class Profile extends React.Component {
     render() {
-        return <div>PROFILE</div>
+        return (
+            <View>
+                <Text>
+                    HOME
+                </Text>
+            </View>
+        )
     }
 }

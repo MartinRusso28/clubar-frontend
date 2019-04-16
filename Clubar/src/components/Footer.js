@@ -1,12 +1,14 @@
 import React, {Component} from 'react'
-import {Text} from 'react-native';
+import {Text, View} from 'react-native';
 
 class Footer extends React.Component {
     render() {
         return (
-            <Text>
-                Footer
-            </Text>
+            <View>
+                <Text>
+                    Footer
+                </Text>
+            </View>
         )
     }
 }

@@ -1,8 +1,8 @@
 import React, { Props } from 'react';
 import {Component} from 'react'
-import View from 'react-native';
+import {Text, View} from 'react-native';
 
-export class BarList extends Component {
+export default class Home extends Component {
 
     constructor(props){
         super(props);
@@ -11,7 +11,9 @@ export class BarList extends Component {
     render() {
         return (
             <View>
-                
+                <Text>
+                    HOME
+                </Text>
             </View>
         )
     }

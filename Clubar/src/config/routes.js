@@ -15,19 +15,18 @@ const AuthNavigator = createStackNavigator(
     }
 )
 
-const HomeNavigator = createStackNavigator({
-    Home: Home,
-    BarItem: BarItem
-}, {}) 
+// const HomeNavigator = createStackNavigator({
+//     Home: Home,
+//     BarItem: BarItem
+// }) 
 
 const AppNavigator = createStackNavigator(
     {
+        Main: Home,
         BarItem: BarItem,
-        Main: HomeNavigator,
         Profile: Profile
     },
     {
-        contentComponent: HomeNavigator,
         drawerWidth: '100%',
     }
 )
@@ -39,6 +38,6 @@ const SwitchNavigator = createSwitchNavigator(
     }
 );
 
-const RoutedApp = createAppContainer(AuthNavigator);
+const RoutedApp = createAppContainer(SwitchNavigator);
 
 export default RoutedApp;

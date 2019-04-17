@@ -1,17 +1,31 @@
 import React from 'react';
 import { Text, View, Button, StyleSheet } from 'react-native';
 
-const SocialNetworkLogin = ({
-    params,
-}) => (
-    <View style={styles.button}>
-        <Button
-            // onPress={onPressLearnMore}
-            title="Login"
-            color="blue"
-            accessibilityLabel="Learn more about this purple button"/>
-    </View>
-);
+class SocialNetworkLogin extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+        };
+
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    render() {
+        return (
+            <View style={styles.button}>
+                <Button
+                    onPress={this.handleClick}
+                    title="Login"
+                    color="blue"
+                    accessibilityLabel="Facebook login"/>
+            </View>
+        );
+    }
+
+    handleClick(){
+        this.props.handleClick();
+    }
+}
 
 const styles = StyleSheet.create({
     button: {
@@ -23,4 +37,4 @@ const styles = StyleSheet.create({
       }
 })
 
-export default SocialNetworkLogin;
+export default SocialNetworkLogin

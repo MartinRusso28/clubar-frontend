@@ -16,7 +16,7 @@ export default class App extends Component {
     render() {
         return (
                 <View style={styles.container}>
-                    <Login/>
+                    <RoutedApp/>
                 </View>
     );
   }
@@ -24,7 +24,6 @@ export default class App extends Component {
 
 const styles = {
     container:{
-        alignItems: 'center',
-        backgroundColor: '#fff'
+        flex:1,
     }
 }

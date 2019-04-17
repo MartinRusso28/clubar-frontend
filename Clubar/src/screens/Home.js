@@ -1,6 +1,7 @@
 import React, { Props } from 'react';
 import {Component} from 'react'
 import {Text, View} from 'react-native';
+import BarList from '../components/BarList';
 
 export default class Home extends Component {
 
@@ -11,9 +12,7 @@ export default class Home extends Component {
     render() {
         return (
             <View>
-                <Text>
-                    HOME
-                </Text>
+                <BarList/>
             </View>
         )
     }

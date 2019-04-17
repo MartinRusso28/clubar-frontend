@@ -8,6 +8,6 @@ export default class BarItem extends React.Component {
                 <Text>
                     BarItem
                 </Text>
-            </View>        )
+            </View>)
     }
 }

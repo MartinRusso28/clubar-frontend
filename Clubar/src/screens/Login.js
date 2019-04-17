@@ -3,6 +3,15 @@ import {Text, View, StyleSheet, Image, ImageBackground} from 'react-native'
 import SocialNetworkLogin from '../components/SocialNetworkLogin/SocialNetworkLogin'
 
 export default class Login extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+        };
+
+        this.navigateToApp = this.navigateToApp.bind(this);
+    }
+
     render(){
         return (
             <View style={styles.container}>
@@ -10,10 +19,14 @@ export default class Login extends Component {
                     <View>
                         <Image source={require('../assests/images/logoTransparente.png')} style={styles.logo} />
                     </View>
-                    <SocialNetworkLogin/>
+                    <SocialNetworkLogin handleClick={this.navigateToApp}/>
                 </ImageBackground>
             </View>
         )
+    }
+
+    navigateToApp = () => {
+        this.props.navigation.navigate('App');
     }
 } 
 

@@ -1,33 +1,78 @@
-import  { createStackNavigator, createAppContainer } from 'react-navigation';
+import React from 'react'
+import  { createStackNavigator, createAppContainer, createSwitchNavigator, createBottomTabNavigator } from 'react-navigation';
 import Home from './../screens/Home'
 import Profile from './../screens/Profile';
-import { createSwitchNavigator } from 'react-navigation';
 import BarItem from './../screens/BarItem';
 import Login from '../screens/Login';
+import { Image, StyleSheet, View } from 'react-native';
+import Header from '../components/Header';
+import { appColor } from './settings'
+import { styles } from './styles'
+import MapScreen from '../screens/Map';
+import { Icon } from 'react-native-elements'
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 const AuthNavigator = createStackNavigator(
-    {
+    { 
         Login: Login,
     },
     {
         headerMode: 'none',
-        lazy: true  /*Hey look at here Lazy is true*/
+        lazy: true 
     }
 )
 
-// const HomeNavigator = createStackNavigator({
-//     Home: Home,
-//     BarItem: BarItem
-// }) 
+const BarNavigator = createStackNavigator(
+    {
+        BarList: {
+            screen: Home
+        },
+        BarItem: {
+            screen: BarItem
+        } 
+    }
+    ,{
+        cardStyle: { backgroundColor: appColor },
+        headerMode: 'screen',
+        defaultNavigationOptions: {
+            headerTitle: <Header/>,
+        }        
+    }
+)
 
-const AppNavigator = createStackNavigator(
+const AppNavigator = createBottomTabNavigator(
     {
-        Main: Home,
-        BarItem: BarItem,
-        Profile: Profile
-    },
-    {
-        drawerWidth: '100%',
+        Bares: {
+            screen: BarNavigator,
+            navigationOptions: {
+                tabBarIcon: ({ tintColor }) => (
+                  <FontAwesome5 name={'cocktail'} size={30} color="white" />
+                )
+              },
+        },
+        Mapa: {
+            screen: MapScreen,
+            navigationOptions: {
+                tabBarIcon: ({ tintColor }) => (
+                  <FontAwesome5 name={'map'} size={30} color="white" />
+                )
+              },
+        },
+        Perfil: {
+            screen: Profile,
+            navigationOptions: {
+                tabBarIcon: ({ tintColor }) => (
+                  <FontAwesome5 name={'users'} size={30} color="white" />
+                )
+              },
+        }
+    }
+    ,{
+        tabBarOptions : {
+            style: {
+            backgroundColor: 'black',
+            }
+        }
     }
 )
 

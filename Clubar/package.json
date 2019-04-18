@@ -5,14 +5,18 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
-    "android": "react-native run-android"
+    "android": "react-native run-android",
+    "bundle": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res"
   },
   "dependencies": {
     "react": "16.8.3",
     "react-native": "0.59.4",
+    "react-native-elements": "^1.1.0",
     "react-native-gesture-handler": "^1.1.0",
     "react-native-material-cards": "^1.0.9",
-    "react-navigation": "^3.8.1"
+    "react-native-vector-icons": "^6.4.2",
+    "react-navigation": "^3.8.1",
+    "react-scripts": "^2.1.8"
   },
   "devDependencies": {
     "@babel/core": "7.4.3",

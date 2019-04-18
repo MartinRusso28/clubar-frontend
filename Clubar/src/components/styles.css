@@ -1,0 +1,9 @@
+.gradient-bottom:after {
+    position: absolute;
+    content:"";
+    height:25%;
+    width: 100%;
+    bottom:-2px;
+    left:0;
+    background: linear-gradient(to bottom, rgba(255,0,0,0) 0%,#000 90%);
+}

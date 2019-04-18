@@ -46,7 +46,7 @@ const AppNavigator = createBottomTabNavigator(
             screen: BarNavigator,
             navigationOptions: {
                 tabBarIcon: ({ tintColor }) => (
-                  <FontAwesome5 name={'cocktail'} size={30} color="white" />
+                  <FontAwesome5 name={'cocktail'} size={20} color="white" />
                 )
               },
         },
@@ -54,7 +54,7 @@ const AppNavigator = createBottomTabNavigator(
             screen: MapScreen,
             navigationOptions: {
                 tabBarIcon: ({ tintColor }) => (
-                  <FontAwesome5 name={'map'} size={30} color="white" />
+                  <FontAwesome5 name={'map'} size={20} color="white" />
                 )
               },
         },
@@ -62,7 +62,7 @@ const AppNavigator = createBottomTabNavigator(
             screen: Profile,
             navigationOptions: {
                 tabBarIcon: ({ tintColor }) => (
-                  <FontAwesome5 name={'users'} size={30} color="white" />
+                  <FontAwesome5 name={'users'} size={20} color="white" />
                 )
               },
         }
@@ -70,7 +70,7 @@ const AppNavigator = createBottomTabNavigator(
     ,{
         tabBarOptions : {
             style: {
-            backgroundColor: 'black',
+            backgroundColor: 'black'
             }
         }
     }

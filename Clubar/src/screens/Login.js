@@ -26,7 +26,7 @@ export default class Login extends Component {
     }
 
     navigateToApp = () => {
-        this.props.navigation.navigate('App');
+        this.props.navigation.navigate('App', {navigation: this.props.navigation});
     }
 } 
 

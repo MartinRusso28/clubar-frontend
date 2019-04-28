@@ -1,25 +1,42 @@
 import React from 'react';
-import { Text, View, Image, TouchableOpacity } from 'react-native';
+import { Text, View, Image, TouchableHighlight } from 'react-native';
 import { Card, CardTitle, CardContent, CardAction, CardButton, CardImage } from 'react-native-material-cards'
 import { appColor} from './../config/settings'
-// import './styles.css'; //TODO: VER PORQUE NO TRAE CSS. HAY QUE CONFIGURAR QUE EL PROYECTO LEA .CSS (.flowconfig?)
+// import { NavigationActions } from 'react-navigation';
+import { withNavigation } from 'react-navigation';
 
-const BarCard = (
-    props,
-) => (
-    <View style={style.container}>
-        <TouchableOpacity style={style.card}>
-            <Image className='gradient-bottom' style={style.cardImage}source={{uri: props.uri}}/>
-            <Text style={style.cardTextTitle}>{props.name}</Text>
-            <Text style={style.cardTextType}>{props.type}</Text>
-            <Text style={style.cardTextAddress}>{props.address}</Text>
-        </TouchableOpacity>
-    </View>
-);
+class BarCard extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+        };
+        this.handleTouch = this.handleTouch.bind(this);
+    }
+
+    render() {
+        return (
+        <View style={style.container}>
+            <TouchableHighlight name='lala' style={style.card} onPress={() => this.handleTouch()}>
+                <View>
+                    <Image className='gradient-bottom' style={style.cardImage} source={{uri: this.props.bar.uri}}/>
+                    <Text style={style.cardTextTitle}>{this.props.bar.name}</Text>
+                    <Text style={style.cardTextType}>{this.props.bar.location}</Text>
+                    <Text style={style.cardTextAddress}>{this.props.bar.address}</Text>
+                </View>
+            </TouchableHighlight>
+        </View>
+        );
+    }
+
+    handleTouch() {
+        this.props.navigation.navigate('BarItem', {
+            bar: this.props.bar
+        });
+    }
+}
 
 const style = {
     card: {
-        backgroundColor:{appColor},
         width:'100%'
     },
     cardImage: {
@@ -58,4 +75,4 @@ const style = {
     },
 }
 
-export default BarCard;
+export default withNavigation(BarCard)

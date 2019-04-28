@@ -11,6 +11,7 @@ import { styles } from './styles'
 import MapScreen from '../screens/Map';
 import { Icon } from 'react-native-elements'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import ItemView from '../screens/ItemView';
 
 const AuthNavigator = createStackNavigator(
     { 
@@ -25,18 +26,21 @@ const AuthNavigator = createStackNavigator(
 const BarNavigator = createStackNavigator(
     {
         BarList: {
-            screen: Home
+            screen: Home,
         },
         BarItem: {
-            screen: BarItem
+            screen: BarItem,
+        },
+        ItemView: {
+            screen: ItemView
         } 
     }
     ,{
         cardStyle: { backgroundColor: appColor },
-        headerMode: 'screen',
-        defaultNavigationOptions: {
-            headerTitle: <Header/>,
-        }        
+        headerMode: 'none'
+        // defaultNavigationOptions: {
+        //     headerTitle: <Header/>,
+        // }        
     }
 )
 

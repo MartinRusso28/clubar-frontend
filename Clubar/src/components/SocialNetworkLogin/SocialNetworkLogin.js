@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, View, Button, StyleSheet } from 'react-native';
+import { SocialIcon } from 'react-native-elements'
 
 class SocialNetworkLogin extends React.Component {
     constructor(props) {
@@ -13,11 +14,12 @@ class SocialNetworkLogin extends React.Component {
     render() {
         return (
             <View style={styles.button}>
-                <Button
-                    onPress={this.handleClick}
-                    title="Login"
-                    color="blue"
-                    accessibilityLabel="Facebook login"/>
+                <SocialIcon
+                title='Login'
+                button
+                type='facebook'
+                onPress={this.handleClick}
+                />
             </View>
         );
     }
